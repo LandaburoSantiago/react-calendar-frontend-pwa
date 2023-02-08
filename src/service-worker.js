@@ -88,8 +88,6 @@ const apiOfflineFallbacks = [
 ];
 
 self.addEventListener("fetch", (event) => {
-  // console.log(event.request.url);
-
   if (!apiOfflineFallbacks.includes(event.request.url)) return;
   const resp = fetch(event.request)
     .then((response) => {
